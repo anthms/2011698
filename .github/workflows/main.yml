@@ -1,0 +1,10 @@
+on:
+  pull_request:
+		types: [ opened ]
+
+jobs:
+  job-zeta:
+    runs-on: ubuntu-latest
+    steps:
+			- run: sleep(300)
+			
