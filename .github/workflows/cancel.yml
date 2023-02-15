@@ -1,10 +1,11 @@
 on:
-	pull_request:
-		types: [ closed ]
+  pull_request:
+    types: [ closed ]
 		
 jobs:
-	job-delta:
-		if: github.event.pull_request.merged == true
-		runs-on: ubuntu-latest
-		steps:
-			
+  job-delta:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "${{ toJSON(github.event) }}"
