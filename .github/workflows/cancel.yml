@@ -8,4 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "${{ toJSON(github.event) }}"
+          gh api \
+            -H "Accept: application/vnd.github+json" \
+            /repos/$GITHUB_REPOSITORY/commits/$GITHUB_SHA/check-runs
